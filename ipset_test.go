@@ -432,11 +432,6 @@ func TestGetNetworks(t *testing.T) {
 	assert.Equal(t, "[10.0.0.128/32 10.0.0.130/31 10.0.0.132/30 10.0.0.136/29 10.0.0.144/28 10.0.0.160/27 10.0.0.192/26]", fmt.Sprintf("%s", s.GetNetworks()))
 }
 
-func unsafeParseNet(str string) *net.IPNet {
-	n, _ := ParseNet(str)
-	return n
-}
-
 func TestEqualTrivial(t *testing.T) {
 	a, b := &IPSet{}, &IPSet{}
 	assert.True(t, a.EqualInterface(b))
